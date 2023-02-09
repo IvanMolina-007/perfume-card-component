@@ -1,0 +1,141 @@
+:root{
+  --primary-color: hsl(158, 36%, 37%);
+  --hover-color: hsl(158, 36%, 56%);
+  --bg-color: hsl(30, 38%, 92%);
+  --dark-blue:  hsl(212, 21%, 14%);
+  --light-blue: hsl(228, 12%, 48%);
+  --white: hsl(0, 0%, 100%);
+
+
+  --ff-regular: 'Montserrat', sans-serif;
+  --ff-headings: 'Fraunces', serif;
+}
+
+*{
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+img{
+  max-width: 100%;
+}
+
+body{
+  font-family: var(--ff-regular);
+  color: var(--light-blue);
+  font-weight: 500;
+  font-size: 0.875rem;
+  display: grid;
+  place-content: center;
+  background-color: var(--bg-color);
+  min-height: 100vh;
+}
+
+/* General styles */
+.card{
+  width: 90%;
+  max-width: 400px;
+  margin-inline: auto;
+  background-color: var(--white);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.card__content{
+  padding: 1.375em;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.card__category{
+  text-transform: uppercase;
+  letter-spacing: .25rem;
+  font-size: 0.75rem;
+}
+
+.card__title{
+  font-family: var(--ff-headings);
+  font-weight: 700;
+  font-size: 2rem;
+  color: var(--dark-blue);
+  line-height: 1;
+}
+
+.card__description{
+  line-height: 1.9;
+  margin-bottom: 0.625rem;
+}
+
+.card__price-container{
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+  margin-bottom: 0.625rem;
+}
+
+.card__price{
+  font-family: var(--ff-headings);
+  font-size: 2rem;
+  color: var(--primary-color);
+}
+
+.card__original-price{
+  text-decoration: line-through;
+}
+
+button{
+  cursor: pointer;
+  border: 0;
+  background-color: var(--primary-color);
+  border-radius: 8px;
+  padding-block: 1rem;
+  color: var(--white);
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  gap: 0.625rem;
+  font-family: var(--ff-regular);
+  margin-bottom: 0.625rem;
+}
+
+button:is(:hover,:focus){
+  background-color: var(--hover-color);
+}
+
+@media (min-width: 900px){
+  .card{
+    max-width: 700px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .card__image img{
+    height: 100%;
+  }
+
+  .card__content{
+    padding: 2.25em;
+  }
+  .card__title{
+    font-weight: 700;
+    font-size: 2.25rem;
+  }
+
+  .card__description{
+    line-height: 1.7;
+  }
+  .card__price-container{
+    gap: 0.625rem;
+  }
+
+  .card__original-price{
+    font-size: 0.9375rem;
+  }
+  button{
+    align-items: center;
+    padding-block: 0.625em;
+    font-size: 0.75rem;
+  }
+
+}
